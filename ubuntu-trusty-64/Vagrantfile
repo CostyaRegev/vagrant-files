@@ -1,0 +1,9 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+# Vagrantfile which downloads & launches local ubuntu vm with a public_network ip.
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  config.vm.hostname = "ServerExample"
+  config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)" ,ip: "192.168.1.40"
+end
